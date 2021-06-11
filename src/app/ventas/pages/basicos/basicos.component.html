@@ -1,0 +1,102 @@
+
+<div class="text-layout">
+    <h1> Pipes Básicos </h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module. 
+    </p>
+</div>
+
+<div class="p-grid">
+
+    <div class="p-col-4">
+        <p-card header="Uppercase"
+                [subheader]="nombreLower | uppercase">
+            {{ nombreLower }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Lowercase"
+                [subheader]="nombreUpper | lowercase">
+            {{ nombreUpper }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Titlecase"
+                [subheader]="nombreCompleto | titlecase">
+            {{ nombreCompleto }}
+        </p-card>
+    </div>
+
+</div>
+
+<div class="text-layout">
+    <h1> Pipe Date </h1>
+    <p>
+        Pipe para mostrar la fecha.
+    </p>
+</div>
+
+<div class="p-grid">
+
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li> fecha </li>
+                <li> fecha | date </li>
+                <li> fecha | date: 'short' </li>
+                <li> fecha | date: 'long' </li>
+                <li> fecha | date: 'MMMM' </li>
+                <li> fecha | date: 'dd-MM-yyyy, h:mm a' </li>
+            </ul>
+
+            <hr>
+            <ul>
+                <li> fecha | date: 'long': 'GMT-6' </li>
+                <li> fecha | date: 'long': 'GMT-4': 'es-MX' </li>
+                <li> fecha | date: 'long': ' ': 'fr' </li>
+            </ul>
+
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li> {{ fecha }} </li>
+                <li> {{ fecha | date }} </li>
+                <li> {{ fecha | date: 'short' }} </li>
+                <li> {{ fecha | date: 'long' }} </li>
+                <li> {{ fecha | date: 'MMMM' }} </li>
+                <li> {{ fecha | date: 'dd-MM-yyyy, h:mm a' }} </li>
+            </ul>
+
+            <hr>
+            <ul>
+                <li> {{ fecha | date: 'long': 'GMT-6' }} </li>
+                <li> {{ fecha | date: 'long': 'GMT-4': 'es-MX' }} </li>
+                <li> {{ fecha | date: 'long': '': 'fr' }} </li>
+            </ul>
+
+        </p-card>
+    </div>
+
+</div>
+
+<div class="text-layout">
+    <h3> Notas: </h3>
+    <div class="p-grid">
+        <div class="p-col-6">
+        Crear un locale en el App Module para cambiar de idioma.
+            <ul>
+                <li>import localeEs from '@angular/common/locales/es-MX';</li>
+                <li>import } registerLocaleData } from '@angular/common';</li>
+                <li>registerLocaleData( localeEs );</li>
+            </ul>
+        </div>
+        <div class="p-col-6">
+        Cambiar de idioma de forma global.
+            <ul>
+                <li>providers: [ } provide: LOCALE_ID, useValue: 'es-MX' } ]</li>
+            </ul>
+        </div>
+    </div>
+</div>
